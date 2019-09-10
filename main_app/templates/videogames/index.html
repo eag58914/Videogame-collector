@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cat List</h1>
+
+{% for videogame in videogames %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ videogame.name }}</span>
+      <p>Publisher: {{ videogame.publisher }}</p>
+      <p>Description: {{ videogame.description }}</p>
+      <p>Year Release: {{videogame.year_release}}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
