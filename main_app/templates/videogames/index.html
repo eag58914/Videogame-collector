@@ -5,13 +5,16 @@
 
 {% for videogame in videogames %}
   <div class="card">
+  <a href="{% url 'detail' videogame.id %}">
     <div class="card-content">
       <span class="card-title">{{ videogame.name }}</span>
       <p>Publisher: {{ videogame.publisher }}</p>
       <p>Description: {{ videogame.description }}</p>
       <p>Year Release: {{videogame.year_release}}
     </div>
+    </a>
   </div>
+
 {% endfor %}
 
 {% endblock %}
