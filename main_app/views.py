@@ -25,3 +25,4 @@ def videogames_detail(request, videogame_id):
 class VideogameCreate(CreateView):
     model = Videogames
     fields = '__all__'
+    success_url = '/videogames/'
