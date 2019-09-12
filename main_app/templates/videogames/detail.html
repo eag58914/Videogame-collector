@@ -10,6 +10,10 @@
       <p>Description: {{ videogame.description }}</p>
       <p>Year Release: {{videogame.year_release}}
   </div>
+  <div class="card-action">
+    <a href="{% url 'videogame_update' videogame.id %}">Edit</a>
+    <a href="{% url 'videogame_delete' videogame.id %}">Delete</a>
+  </div>
   </div>
 
   {% endblock %}
