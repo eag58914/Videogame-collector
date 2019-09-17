@@ -15,11 +15,20 @@ CONSOLE = [
 ]
 
 
+class Console(models.Model):
+    console = models.CharField(
+        max_length=1,
+        choices=CONSOLE,
+        default=CONSOLE[0][0]
+    )
+
+
 class Videogames(models.Model):
     name = models.CharField(max_length=50)
     publisher = models.CharField(max_length=50)
     description = models.TextField(max_length=100)
     year_release = models.IntegerField()
+    console = models.ManyToManyField(Console)
 
     def __str__(self):
         return self.name
@@ -27,11 +36,3 @@ class Videogames(models.Model):
 
 def get_absolute_url(self):
     return reverse('detail', kwargs={'videogame_id': self.id})
-
-
-class Console(models.Model):
-    console = models.CharField(
-        max_length=1,
-        choices=CONSOLE,
-        default=CONSOLE[0][0]
-    )
